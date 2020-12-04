@@ -1,0 +1,30 @@
+﻿@model ProyectoDAW_hemeroteca_MDK.Models.Facultad
+
+@{
+    ViewData["Title"] = "Delete";
+}
+<br /><br />
+<CENTER>
+    <h1>ELIMINAR FACULTAD</h1>
+
+    <h3>¿Esta seguro que desea eliminar elemento?</h3>
+</CENTER>
+    <div class=" container ">
+
+        <hr />
+        <br/>
+        <dl class="row container ">
+            <dt class="col-sm-1">
+                @Html.DisplayNameFor(model => model.Nombre)
+            </dt>
+            <dd class="col-sm-1">
+                @Html.DisplayFor(model => model.Nombre)
+            </dd>
+        </dl>
+
+        <form asp-action="Delete">
+            <input type="hidden" asp-for="IdFacultad" />
+            <input type="submit" value="ELIMINAR" class="btn btn-outline-primary" /> |
+            <a class="btn btn-outline-secondary" asp-action="Index" role="button">CANCELAR</a>
+        </form>
+    </div>

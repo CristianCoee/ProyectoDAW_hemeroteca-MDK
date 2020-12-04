@@ -1,0 +1,45 @@
+﻿@model ProyectoDAW_hemeroteca_MDK.Models.Proyecto
+
+@{
+    ViewData["Title"] = "Delete";
+}
+<br /><br />
+<CENTER>
+    <h1>ELIMINAR ESTUDIANTE DEL PROYECTO</h1>
+
+    <h3>¿Esta seguro que desea eliminar elemento?</h3>
+</CENTER>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.IdTipoProyecto)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.IdTipoProyecto)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.IdAutor)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.IdAutor)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Año)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Año)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Titulo)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Titulo)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="IdProyecto" />
+        <input type="submit" value="ELIMINAR" class="btn btn-outline-primary" /> |
+        <a class="btn btn-outline-secondary" asp-action="Index" role="button">CANCELAR</a>
+    </form>
+</div>

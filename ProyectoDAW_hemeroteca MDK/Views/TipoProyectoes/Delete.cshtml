@@ -1,0 +1,27 @@
+﻿@model ProyectoDAW_hemeroteca_MDK.Models.TipoProyecto
+
+@{
+    ViewData["Title"] = "Delete";
+}
+<br /><br />
+<CENTER>
+    <h1>ELIMINAR TIPO DE PROYECTO</h1>
+
+    <h3>¿Esta seguro que desea eliminar elemento?</h3>
+</CENTER>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="IdTipoProyecto" />
+        <input type="submit" value="ELIMINAR" class="btn btn-outline-primary" /> |
+        <a class="btn btn-outline-secondary" asp-action="Index" role="button">CANCELAR</a>
+    </form>
+</div>

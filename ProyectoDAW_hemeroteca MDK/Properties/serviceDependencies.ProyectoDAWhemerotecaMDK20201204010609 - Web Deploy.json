@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "mssql1": {
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.Sql/servers/proyectodawhemerotecamdkdbserver/databases/ProyectoDAW_hemeroteca MDK_db",
+      "type": "mssql.azure",
+      "connectionId": "ProyectoDAW_hemeroteca_MDKContext",
+      "secretStore": "AzureAppSettings"
+    }
+  }
+}

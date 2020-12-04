@@ -1,0 +1,58 @@
+﻿@model ProyectoDAW_hemeroteca_MDK.Models.Autor
+
+@{
+    ViewData["Title"] = "Delete";
+}
+<br /><br />
+<CENTER>
+    @*Titulo de la vista *@
+    <h1>ELIMINAR ESTUDIANTE</h1>
+    @*Mensaje de confirmacion *@
+    <h3>¿Esta seguro que desea eliminar elemento?</h3>
+</CENTER>
+<h1>Delete</h1>
+
+
+<hr />
+@*Invocacion de los elementos seleccionados *@
+<dl class="row">
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.Nombre)
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(model => model.Nombre)
+    </dd>
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.Apellido)
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(model => model.Apellido)
+    </dd>
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.Carnet)
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(model => model.Carnet)
+    </dd>
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.IdCarrera)
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(model => model.IdCarrera)
+    </dd>
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.Sexo)
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(model => model.Sexo)
+    </dd>
+</dl>
+@*Boton para el eliminar el registro *@
+
+<form asp-action="Delete">
+    <input type="hidden" asp-for="IdAutor" />
+    <input type="submit" value="ELIMINAR" class="btn btn-outline-primary" /> |
+    @*Boton para cancelar y regresa a la pantalla anterior*@
+    <a class="btn btn-outline-secondary" asp-action="Index" role="button">CANCELAR</a>
+</form>
+</div>

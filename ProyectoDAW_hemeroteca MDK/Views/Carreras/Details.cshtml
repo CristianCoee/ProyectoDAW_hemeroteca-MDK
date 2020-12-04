@@ -1,0 +1,40 @@
+﻿@model ProyectoDAW_hemeroteca_MDK.Models.Carrera
+
+@{
+    ViewData["Title"] = "Details";
+}
+<br /><br />
+<CENTER>
+    <div>
+        <h4>CARRERA</h4>
+</CENTER>
+    <hr />
+
+    
+
+    <dl class="row justify-content-center">
+
+        <div class="card border-info mb-3 " style="max-width: 88rem;">
+            <div class="card-header"> </div>
+            <div class="card-body text-info">
+                <p class="card-title">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.IdFacultad)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.IdFacultad)
+        </dd>
+        </p>
+
+        <a class="btn btn-outline-danger" asp-action="Edit" asp-route-id="@Model.IdCarrera" role="button">EDITAR</a> |
+        <a class="btn btn-outline-secondary" asp-action="Index" role="button">CANCELAR</a>
+        </div>
+        </div>
+
+    </dl>

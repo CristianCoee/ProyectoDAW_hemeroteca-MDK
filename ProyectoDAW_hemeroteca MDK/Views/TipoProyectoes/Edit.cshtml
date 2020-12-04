@@ -1,0 +1,34 @@
+﻿@model ProyectoDAW_hemeroteca_MDK.Models.TipoProyecto
+
+@{
+    ViewData["Title"] = "Edit";
+}
+<br /><br />
+<CENTER>
+    <h1>EDITAR</h1>
+
+    <h4>TIPO DE PROYECTO</h4>
+</CENTER>
+<hr />
+<div class="row">
+    <div class="col-md-9">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="IdTipoProyecto" />
+            <div class="form-group">
+                <label asp-for="Nombre" class="control-label"></label>
+                <input asp-for="Nombre" class="form-control" />
+                <span asp-validation-for="Nombre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="GUARDAR" class="btn btn-outline-primary" />
+                <a class="btn btn-outline-secondary" asp-action="Index" role="button">CANCELAR</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

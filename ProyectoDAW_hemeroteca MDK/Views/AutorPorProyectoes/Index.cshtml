@@ -1,0 +1,51 @@
+﻿@model IEnumerable<ProyectoDAW_hemeroteca_MDK.Models.AutorPorProyecto>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<br /><br />
+<CENTER><h1>PROYECTOS</h1></CENTER>
+<br />
+<br />
+
+
+@*<a asp-action="Create">NUEVO</a>*@
+
+<div class="table-responsive-md">
+    <p>Total de registros: @ViewData["UserCount"]</p> 
+    <table class="table table-bordered">
+        <thead class="thead-dark">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.IdProyecto)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.IdAutor)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td class="table-light">
+                        @Html.DisplayFor(modelItem => item.IdProyecto)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.IdAutor)
+                    </td>
+                    <td>
+
+                        <a class="btn btn-outline-danger" asp-action="Edit" asp-route-id="@item.IdAutorProyecto" role="button">EDITAR</a> |
+                        <a class="btn btn-outline-info" asp-action="Details" asp-route-id="@item.IdAutorProyecto" role="button">DETALLES</a> |
+                        <a class="btn btn-outline-dark" asp-action="Delete" asp-route-id="@item.IdAutorProyecto" role="button">BORRAR</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+<br />
+<br />
+<a class="btn btn-outline-primary" asp-action="Create" role="button">NUEVO</a>

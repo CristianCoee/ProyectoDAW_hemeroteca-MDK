@@ -1,0 +1,65 @@
+﻿@model ProyectoDAW_hemeroteca_MDK.Models.Autor
+
+@{
+    ViewData["Title"] = "Details";
+}
+@*Titulo de la vista *@
+<br /><br />
+<CENTER>
+    <div>
+        <h4>Estudiante</h4>
+</CENTER>
+<hr />
+
+<br />
+<dl class="row justify-content-center">
+    @*Titulo llamado de los datos del campo seleccionado *@
+    <div class="card border-info mb-1 " style="max-width: 98rem;">
+        <div class="card-header"> </div>
+        <div class="card-body text-info">
+            <p class="card-title">
+    <dt>
+        @Html.DisplayNameFor(model => model.Nombre)
+    </dt>
+    <dd>
+        @Html.DisplayFor(model => model.Nombre)
+    </dd>
+    <dt>
+        @Html.DisplayNameFor(model => model.Apellido)
+    </dt>
+    <dd>
+        @Html.DisplayFor(model => model.Apellido)
+    </dd>
+    <dt>
+        @Html.DisplayNameFor(model => model.Carnet)
+    </dt>
+    <dd>
+        @Html.DisplayFor(model => model.Carnet)
+    </dd>
+    <dt>
+        @Html.DisplayNameFor(model => model.IdCarrera)
+    </dt>
+    <dd>
+        @Html.DisplayFor(model => model.IdCarrera)
+    </dd>
+    <dt>
+        @Html.DisplayNameFor(model => model.Sexo)
+    </dt>
+    <dd>
+        @Html.DisplayFor(model => model.Sexo)
+    </dd>
+    </p>
+
+
+    <a class="btn btn-outline-info" asp-ac asp-action="Edit" asp-route-id="@Model.IdAutor" role="button">EDITAR</a> |
+   
+    <a class="btn btn-outline-secondary" asp-action="Index" role="button">CANCELAR</a>
+    </div>
+
+</dl>
+
+
+
+
+
+

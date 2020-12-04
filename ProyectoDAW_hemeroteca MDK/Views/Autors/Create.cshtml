@@ -1,0 +1,58 @@
+﻿@model ProyectoDAW_hemeroteca_MDK.Models.Autor
+
+@{
+    ViewData["Title"] = "Create";
+}
+<br /><br />
+<CENTER>
+    @*Titulo de la vista *@
+    <h1>NUEVO</h1>
+
+    <h4>Estudiante</h4>
+</CENTER>
+    <hr />
+    <div class="row container">
+        <div class="col-md-8">
+            @*Label para registro de la bd *@
+            <form asp-action="Create">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="Nombre" class="control-label"></label>
+                    <input asp-for="Nombre" class="form-control" />
+                    <span asp-validation-for="Nombre" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Apellido" class="control-label"></label>
+                    <input asp-for="Apellido" class="form-control" />
+                    <span asp-validation-for="Apellido" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Carnet" class="control-label"></label>
+                    <input asp-for="Carnet" class="form-control" />
+                    <span asp-validation-for="Carnet" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="IdCarrera" class="control-label"></label>
+                    <input asp-for="IdCarrera" class="form-control" />
+                    <span asp-validation-for="IdCarrera" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Sexo" class="control-label"></label>
+                    <input asp-for="Sexo" class="form-control" />
+                    <span asp-validation-for="Sexo" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="GUARDAR" class=" btn btn-outline-primary" />
+                    <a class="btn btn-outline-secondary" asp-action="Index" role="button">CANCELAR</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div>
+       
+    </div>
+
+    @section Scripts {
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    }

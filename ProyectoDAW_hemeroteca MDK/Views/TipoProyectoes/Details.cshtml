@@ -1,0 +1,35 @@
+﻿@model ProyectoDAW_hemeroteca_MDK.Models.TipoProyecto
+
+@{
+    ViewData["Title"] = "Details";
+}
+<br /><br />
+<CENTER>
+    <div>
+        <h4> Tipo de proyecto</h4>
+</CENTER>
+    <hr />
+
+    <dl class="row justify-content-center">
+
+        <div class="card border-info mb-3 " style="max-width: 88rem;">
+            <div class="card-header"> </div>
+            <div class="card-body text-info">
+                <p class="card-title">
+                    
+        <dt >
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+        <dd >
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+        </p>
+
+        
+        <a  class="btn btn-outline-info" asp-action="Edit" asp-route-id="@Model.IdTipoProyecto" role="button">EDITAR</a> |
+        <a class="btn btn-outline-secondary"asp-action="Index" role="button">CANCELAR</a>
+        </div>
+
+    </dl>
+
+

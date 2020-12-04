@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "mssql1": {
+      "type": "mssql",
+      "connectionId": "ProyectoDAW_hemeroteca_MDKContext"
+    }
+  }
+}

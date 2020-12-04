@@ -1,0 +1,86 @@
+﻿@model IEnumerable<ProyectoDAW_hemeroteca_MDK.Models.Autor>
+
+@{
+    ViewData["Title"] = "Index";
+}
+@*Titulo de la vista *@
+<br /><br />
+<CENTER><h1>ESTUDIANTES</h1></CENTER>
+<br />
+<br />
+@*<p>
+        <a asp-action="Create">Create New</a>
+    </p>*@
+@*Invocacion de metodo get para recibir los datos *@
+<form asp-action="Index" method="get">
+
+    <div class="form-action no-color">
+        @*Apartado de la barra del buscador e invocacion del controlador la parte donde se programo el funcionamiento *@
+        <p>
+            <input type="text" name="searchString" value="@ViewData["CurrentFilter"]" />
+            <input type="submit" value="BUSCAR" class="btn btn-outline-primary" />
+            <a asp-action="Index">Todos los registros</a>
+            Total de registros: @ViewData["UserCount"]
+        </p>
+    </div>
+</form>
+<div class="table-responsive-md">
+    @*Creacion de la tabla y llamado de los registros.  *@
+    <table class="table table-bordered">
+        <thead class="thead-dark">
+
+            <tr>
+                <th>
+                    <a asp-action="Index" asp-route-sortOrder="@ViewData["NombreSortParam"]" style="color:white">   @Html.DisplayNameFor(model => model.Nombre)</a>
+                </th>
+                <th>
+                    <a asp-action="Index" asp-route-sortOrder="@ViewData["ApellidoSortParam"]" style="color:white">   @Html.DisplayNameFor(model => model.Apellido)</a>
+                </th>
+                <th>
+                    <a asp-action="Index" asp-route-sortOrder="@ViewData["CarnetSortParam"]" style="color:white">  @Html.DisplayNameFor(model => model.Carnet)</a>
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.IdCarrera)
+                </th>
+                <th>
+                    <a asp-action="Index" asp-route-sortOrder="@ViewData["SexoSortParam"]" style="color:white">  @Html.DisplayNameFor(model => model.Sexo) </a>
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Nombre)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Apellido)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Carnet)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.IdCarrera)
+                  
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Sexo)
+                    </td>
+                    <td>
+                        @*Botones para llamada de las vistas: detalle, editar y borrar de acuerdo al elemento seleccionado *@
+                        <a class="btn btn-outline-danger" asp-action="Edit" asp-route-id="@item.IdAutor" role="button">EDITAR</a> |
+                        <a class="btn btn-outline-info" asp-action="Details" asp-route-id="@item.IdAutor" role="button">DETALLES</a> |
+                        <a class="btn btn-outline-dark" asp-action="Delete" asp-route-id="@item.IdAutor" role="button">BORRAR</a>
+                    </td>
+                </tr>
+
+            }
+        </tbody>
+    </table>
+</div>
+<br />
+<br />
+@*Boton para la vista crear y nuevo registro. *@
+<a class="btn btn-outline-primary" asp-action="Create" role="button">NUEVO</a>
